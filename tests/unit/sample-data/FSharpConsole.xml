@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharpConsole</name></assembly>
+<members>
+<member name="P:FSharpConsole.ClassType.StringValue">
+<summary>
+ A string member.
+ </summary>
+</member>
+<member name="P:FSharpConsole.ClassType.IntValue">
+<summary>
+ An int member.
+ </summary>
+</member>
+<member name="M:FSharpConsole.ClassType.UnaryMethod(System.Int32)">
+<summary>
+ Unary instance function which returns the sum of <see cref="IntValue" /> and <paramref name="value"/>. 
+ </summary>
+ <param name="value">A value.</param>
+ <returns>
+ The sum.
+ </returns>
+</member>
+<member name="M:FSharpConsole.ClassType.TupledBinaryMethod(System.Tuple{System.String,System.Int32})">
+<summary>
+ Binary instance function which returns a tuple of: the concatenation of <see cref="StringValue" /> and <paramref name="stringValue"/>, and the sum of <see cref="IntValue" /> and <paramref name="intValue"/>. 
+ </summary>
+ <param name="tupleArgs">A tuple of <see cref="string" /> and <see cref="int" />.</param>
+ <returns>
+ The resulting tuple.
+ </returns>
+</member>
+<member name="M:FSharpConsole.ClassType.NullaryMethod">
+<summary>
+ Nullary instance function which returns the string form of <see cref="IntValue" /> and <see cref="StringValue" />. 
+ </summary>
+ <returns>
+ The concatenated string value.
+ </returns>
+</member>
+<member name="T:FSharpConsole.ClassType">
+<summary>
+ A class type with constructor parameters.
+ </summary>
+</member>
+<member name="T:FSharpConsole.UnionType.StringCase">
+<summary>
+ A string typed union case.
+ </summary>
+</member>
+<member name="T:FSharpConsole.UnionType.TypelessCase">
+<summary>
+ A typeless union case.
+ </summary>
+</member>
+<member name="T:FSharpConsole.UnionType">
+<summary>
+ A union type.
+ </summary>
+</member>
+<member name="T:FSharpConsole.RecordType">
+<summary>
+ A record type.
+ </summary>
+</member>
+</members>
+</doc>

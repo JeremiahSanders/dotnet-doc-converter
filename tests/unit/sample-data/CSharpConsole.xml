@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSharpConsole</name>
+    </assembly>
+    <members>
+        <member name="T:CSharpConsole.Class">
+            <summary>
+              A class.
+            </summary>
+            <remarks>
+              This class contains a variety of members.
+            </remarks>
+        </member>
+        <member name="F:CSharpConsole.Class.ConstantString">
+            <summary>
+              A string constant.
+            </summary>
+        </member>
+        <member name="F:CSharpConsole.Class.StaticReadonlyField">
+            <summary>
+              A static readonly string field.
+            </summary>
+            <remarks>
+              TODO: Consider moving initialization of static fields into static constructor.
+            </remarks>
+        </member>
+        <member name="F:CSharpConsole.Class.InstanceReadonlyField">
+            <summary>
+              A readonly string field.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.Class.StaticReadonlyProperty">
+            <summary>
+              A static get-only property.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.Class.StaticMutableProperty">
+            <summary>
+              A static mutable property.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.Class.InstanceReadonlyProperty">
+            <summary>
+              A get-only property.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.Class.InstanceMutableProperty">
+            <summary>
+              A mutable property.
+            </summary>
+        </member>
+        <member name="M:CSharpConsole.Class.StaticNullaryMethod">
+            <summary>
+              A static, nullary method.
+            </summary>
+            <returns>The answer.</returns>
+        </member>
+        <member name="M:CSharpConsole.Class.StaticUnaryParameterMethod(System.String)">
+            <summary>
+              A static method with one parameter.
+            </summary>
+            <param name="value">A string.</param>
+            <returns>Identity.</returns>
+        </member>
+        <member name="M:CSharpConsole.Class.StaticUnaryGenericParameterMethod``1(``0@)">
+            <summary>
+              A static method with one generic parameter.
+            </summary>
+            <param name="value">A value.</param>
+            <typeparam name="T">A type.</typeparam>
+            <returns>Identity.</returns>
+        </member>
+        <member name="M:CSharpConsole.Class.InstanceNullaryMethod">
+            <summary>
+              A nullary method.
+            </summary>
+            <remarks>IDE spell check rejects &quot;nullary&quot;.</remarks>
+            <returns>The mutable property value.</returns>
+        </member>
+        <member name="M:CSharpConsole.Class.InstanceUnaryParameterMethod(System.String)">
+            <summary>
+              A method with one parameter.
+            </summary>
+            <param name="value">A string.</param>
+            <returns>Identity.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:CSharpConsole.Class.InstanceUnaryGenericParameterMethod``1(``0@)">
+            <summary>
+              A method with one generic parameter.
+            </summary>
+            <param name="value">A value.</param>
+            <typeparam name="T">A type.</typeparam>
+            <returns>Identity.</returns>
+        </member>
+        <member name="T:CSharpConsole.GenericClass`1">
+            <summary>
+              A generic class.
+            </summary>
+            <typeparam name="TComparable">A type with constraint.</typeparam>
+        </member>
+        <member name="M:CSharpConsole.GenericClass`1.#ctor(`0,`0)">
+            <summary>
+              Creates a new instance.
+            </summary>
+            <param name="itemOne">An item.</param>
+            <param name="itemTwo">Another item.</param>
+        </member>
+        <member name="P:CSharpConsole.GenericClass`1.ItemOne">
+            <summary>
+              Gets item one.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.GenericClass`1.ItemTwo">
+            <summary>
+              Gets item two.
+            </summary>
+        </member>
+        <member name="M:CSharpConsole.GenericClass`1.Compare">
+            <summary>
+              Compares <see cref="P:CSharpConsole.GenericClass`1.ItemOne" /> and <see cref="P:CSharpConsole.GenericClass`1.ItemTwo" />.
+            </summary>
+            <returns><see cref="M:System.IComparable.CompareTo(System.Object)" /> results.</returns>
+        </member>
+        <member name="T:CSharpConsole.Program">
+            <summary>
+              Public static class.
+            </summary>
+        </member>
+        <member name="M:CSharpConsole.Program.Main(System.String[])">
+            <summary>
+              Public static method.
+            </summary>
+        </member>
+        <member name="T:CSharpConsole.StaticClass">
+            <summary>
+              A static class.
+            </summary>
+        </member>
+        <member name="F:CSharpConsole.StaticClass.ConstantString">
+            <summary>
+              A string constant.
+            </summary>
+        </member>
+        <member name="F:CSharpConsole.StaticClass.ReadonlyField">
+            <summary>
+              A static readonly string field.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.StaticClass.ReadonlyProperty">
+            <summary>
+              A static get-only property.
+            </summary>
+        </member>
+        <member name="P:CSharpConsole.StaticClass.MutableProperty">
+            <summary>
+              A static mutable property.
+            </summary>
+        </member>
+        <member name="M:CSharpConsole.StaticClass.NullaryMethod">
+            <summary>
+              A static, nullary method.
+            </summary>
+            <returns>The answer.</returns>
+        </member>
+        <member name="M:CSharpConsole.StaticClass.UnaryParameterMethod(System.String)">
+            <summary>
+              A static method with one parameter.
+            </summary>
+            <param name="value">A string.</param>
+            <returns>Identity.</returns>
+        </member>
+        <member name="M:CSharpConsole.StaticClass.UnaryGenericParameterMethod``1(``0@)">
+            <summary>
+              A static method with one generic parameter.
+            </summary>
+            <param name="value">A value.</param>
+            <typeparam name="T">A type.</typeparam>
+            <returns>Identity.</returns>
+        </member>
+    </members>
+</doc>
