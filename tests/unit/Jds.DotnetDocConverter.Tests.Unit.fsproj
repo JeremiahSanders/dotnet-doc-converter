@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Jds.DotnetDocConverter.fsproj" />
+    <ProjectReference Include="..\sample-apps\csharp-console\CSharpConsole.csproj" />
+    <ProjectReference Include="..\sample-apps\fsharp-console\FSharpConsole.fsproj" />
   </ItemGroup>
 
 </Project>

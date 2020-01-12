@@ -1,14 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackAsTool>true</PackAsTool>
-    <ToolCommandName>docconvert</ToolCommandName>
   </PropertyGroup>
-
   <ItemGroup>
+    <Compile Include="DocParsing.fs" />
+    <Compile Include="TypeExtensions.fs" />
+    <Compile Include="Markdown.fs" />
+    <Compile Include="DocDisplay.fs" />
+    <Compile Include="FileLoading.fs" />
+    <Compile Include="FileSaving.fs" />
+    <Compile Include="ArgParsing.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-
 </Project>
