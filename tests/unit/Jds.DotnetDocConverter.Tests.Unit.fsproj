@@ -25,4 +25,8 @@
     <ProjectReference Include="..\sample-apps\fsharp-console\FSharpConsole.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-fantomas" Version="2.9.2" />
+  </ItemGroup>
+
 </Project>

@@ -13,4 +13,7 @@
     <Compile Include="ArgParsing.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-fantomas" Version="2.9.2" />
+  </ItemGroup>
 </Project>

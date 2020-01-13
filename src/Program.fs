@@ -1,4 +1,4 @@
-﻿module Jds.DotnetDocConverter.Program
+module Jds.DotnetDocConverter.Program
 
 open System
 open System.Text
@@ -18,25 +18,25 @@ let generateUsage() =
 let generateDocs docFiles =
     docFiles
     |> List.map (fun docPath ->
-        (loadXmlFile>>parseAssemblyDocs) docPath
-        |> (fun assemblyDocs ->
-//              (assemblyDocs, (asMarkdownDocument assemblyDocs))
-              (assemblyDocs, (assemblyDocs|>assemblyDocsToMarkdownDocumentNode|>markdownDocumentNodeToString))
-           )
-    )
+           (loadXmlFile >> parseAssemblyDocs) docPath
+           |> (fun assemblyDocs ->
+           (//              (assemblyDocs, (asMarkdownDocument assemblyDocs))
+            assemblyDocs,
+            (assemblyDocs
+             |> assemblyDocsToMarkdownDocumentNode
+             |> markdownDocumentNodeToString))))
 
-let saveAssemblyDocument appArguments (assemblyDocument,markdown) =
-                        let fileName = assemblyDocument.Assembly.Name + ".md"
-                        let destinationPath = System.IO.Path.Combine(appArguments.OutputDirectory, fileName)
-                        FileSaving.saveFile destinationPath markdown
+let saveAssemblyDocument appArguments (assemblyDocument, markdown) =
+    let fileName = assemblyDocument.Assembly.Name + ".md"
+    let destinationPath = System.IO.Path.Combine(appArguments.OutputDirectory, fileName)
+    FileSaving.saveFile destinationPath markdown
+
 let generateDisplay appArguments =
-    if (List.isEmpty appArguments.DocFiles)
-    then generateUsage()
+    if (List.isEmpty appArguments.DocFiles) then generateUsage()
     else
-      generateDocs appArguments.DocFiles
-      |> Seq.map (saveAssemblyDocument appArguments)
-      |> String.concat "\n\n"
-
+        generateDocs appArguments.DocFiles
+        |> Seq.map (saveAssemblyDocument appArguments)
+        |> String.concat "\n\n"
 
 [<EntryPoint>]
 let main argv =
