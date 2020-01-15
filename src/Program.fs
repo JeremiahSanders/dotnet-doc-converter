@@ -42,6 +42,7 @@ let generateDisplay appArguments =
 let main argv =
     argv
     |> parseArguments
-    |> generateDisplay
+    |> Option.map generateDisplay
+    |> Option.defaultWith generateUsage
     |> printfn "%s"
     0 // return an integer exit code
