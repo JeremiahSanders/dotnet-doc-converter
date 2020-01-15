@@ -25,6 +25,20 @@ module ArgParsing =
             |> Some
         | _ -> None
 
+    let tryGetOutputDirectory (options : string list) =
+        match options with
+        | [ "-o"; outputDirectory ] ->
+            match outputDirectory with
+            | IsDirectory outputDirectory -> Some outputDirectory
+            | _ -> None
+        | _ -> None
+
+    let private getOutputDirectory =
+        function
+        | IsFile filePath -> System.IO.Path.GetDirectoryName(filePath)
+        | IsDirectory directoryPath -> directoryPath
+        | _ -> "."
+
     let parseArguments (arguments : string array) =
         arguments
         |> List.ofArray
@@ -35,5 +49,6 @@ module ArgParsing =
             |> tryGetFiles
             |> Option.map (fun validFiles ->
                    { DocFiles = validFiles
-                     OutputDirectory = "."
+                     OutputDirectory =
+                         tryGetOutputDirectory rest |> Option.defaultWith (fun () -> getOutputDirectory first)
                      RequestedNotFoundDocFiles = [] })
