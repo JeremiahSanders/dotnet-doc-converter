@@ -15,7 +15,7 @@ module ArgParsing =
         else None
 
     let private tryGetFiles path =
-        match path with
+        match (System.IO.Path.GetFullPath(path)) with
         | IsFile filePath -> Some [ filePath ]
         | IsDirectory directoryPath ->
             let enumerationOptions = System.IO.EnumerationOptions()
@@ -26,11 +26,13 @@ module ArgParsing =
         | _ -> None
 
     let tryGetOutputDirectory (options : string list) =
-        match options with
-        | [ "-o"; outputDirectory ] ->
-            match outputDirectory with
+        let verifyDirectory outputDirectory =
+            match (System.IO.Path.GetFullPath(outputDirectory)) with
             | IsDirectory outputDirectory -> Some outputDirectory
             | _ -> None
+        match options with
+        | [ "-o"; outputDirectory ] -> verifyDirectory outputDirectory
+        | [ "--output"; outputDirectory ] -> verifyDirectory outputDirectory
         | _ -> None
 
     let private getOutputDirectory =
@@ -39,11 +41,15 @@ module ArgParsing =
         | IsDirectory directoryPath -> directoryPath
         | _ -> "."
 
+    type ParsingResult =
+        | Success of ProgramArguments
+        | Failure of string
+
     let parseArguments (arguments : string array) =
         arguments
         |> List.ofArray
         |> function
-        | [] -> None
+        | [] -> Failure "Documentation source required"
         | first :: rest ->
             first
             |> tryGetFiles
@@ -52,3 +58,5 @@ module ArgParsing =
                      OutputDirectory =
                          tryGetOutputDirectory rest |> Option.defaultWith (fun () -> getOutputDirectory first)
                      RequestedNotFoundDocFiles = [] })
+            |> Option.map Success
+            |> Option.defaultWith (fun () -> Failure "Failed to load documentation source")
